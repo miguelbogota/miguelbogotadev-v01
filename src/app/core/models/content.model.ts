@@ -1,7 +1,7 @@
 /**
  * Content that will be shown in the main page.
  */
-export interface AppAbout {
+export interface AppContent {
   name: string;
   headline: string;
   about: string;
