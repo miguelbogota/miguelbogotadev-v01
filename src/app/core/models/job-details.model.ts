@@ -8,7 +8,7 @@ export interface AppJobDetails {
   position: string;
   description: string;
   employmentType: string;
-  mediaUrls: string[];
+  imageUrls: string[];
   location: string;
   company?: {
     name: string;
