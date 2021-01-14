@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "miguelbogotadev": {
+      "hosting": {
+        "miguelbogotadev": [
+          "miguelbogotadev"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "miguelbogotadev": "miguelbogotadev"
+  }
+}

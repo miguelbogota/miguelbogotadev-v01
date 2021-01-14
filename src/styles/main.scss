@@ -1,0 +1,18 @@
+@import "normalize";
+
+// Default fonts for the library.
+* {
+  font-family: "Barlow", "Roboto", "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}
+
+// Body will have a 14px padding for smaller screens.
+body {
+  padding: 0px;
+  // Main container
+  .container {
+    padding: 0px 14px;
+    max-width: 1200px;
+    margin: 0px auto;
+  }
+}

@@ -1,0 +1,25 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 5px;
+
+  // Title
+  h2 {
+    margin: 0px 0px 1rem 0px;
+    font-size: 2.4rem;
+  }
+
+  // Description
+  p {
+    margin: 0px 0px 1rem 0px;
+    font-size: 1.2rem;
+  }
+
+  // Cat gif
+  img {
+    width: 200px;
+  }
+}
