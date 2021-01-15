@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, DocumentReference } from '@angular/fire/firestore';
 import { AppJobDetails } from '@app-core/models/job-details.model';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, find } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -30,6 +30,20 @@ export class JobService {
    */
   public getJobs(): Observable<AppJobDetails[] | null> {
     return this.jobDetailsSubject;
+  }
+
+  /**
+   * Returns an individual document from the db.
+   *
+   * @param jobId Document id to get.
+   */
+  public getJob(jobId: string): Observable<AppJobDetails | null> {
+    return this.collectionRef
+      .doc(jobId)
+      .snapshotChanges()
+      .pipe(
+        map(data => data ? ({ id: data.payload.id, ...data.payload.data() as AppJobDetails }) : null),
+      );
   }
 
   /**
