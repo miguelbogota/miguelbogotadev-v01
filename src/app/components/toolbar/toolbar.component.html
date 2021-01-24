@@ -1,1 +1,11 @@
-<p>toolbar works!</p>
+<nav class="toolbar container">
+  <a class="toolbar-home-link" routerLink="/">MIGUEL BOGOTA</a>
+
+  <!-- Social network icons -->
+  <div class="toolbar-social">
+    <!-- For with all the link to the different social networks -->
+    <a *ngFor="let socialLink of socialLinks" class="toolbar-social-link" [href]="[socialLink.link]" target="_blank">
+      <i [class]="'toolbar-social-link-icon ' + socialLink.icon"></i>
+    </a>
+  </div>
+</nav>

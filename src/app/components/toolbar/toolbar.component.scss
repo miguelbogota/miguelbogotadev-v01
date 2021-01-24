@@ -1,3 +1,61 @@
 :host {
-  display: none;
+  display: block;
+  width: 100%;
+  padding: 6px;
+  box-sizing: border-box;
+
+  .toolbar {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-home-link {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #727272;
+      text-decoration: none;
+      transition: color 0.2s linear;
+
+      &:hover {
+        color: #3c97c2;
+      }
+
+      @media screen and (max-width: 768px) {
+        font-size: 1.36rem;
+      }
+    }
+
+    &-social {
+      display: flex;
+      flex-direction: row;
+      :last-child {
+        margin: 0px 0px 0px 3px;
+      }
+
+      &-link {
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0px 3px;
+        border-radius: 3px;
+        padding: 5px;
+        transition: background-color 0.2s linear;
+
+        &:hover {
+          background-color: #f1f1f1;
+        }
+
+        &-icon {
+          font-size: 1.5rem;
+          color: #555555;
+          margin: 0px !important;
+          @media screen and (max-width: 768px) {
+            font-size: 1.4rem;
+          }
+        }
+      }
+    }
+  }
 }

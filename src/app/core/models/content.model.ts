@@ -8,4 +8,5 @@ export interface AppContent {
   photoUrl: string;
   imageUrls: string[];
   skills: string[];
+  isOpenForJobs: boolean;
 }
