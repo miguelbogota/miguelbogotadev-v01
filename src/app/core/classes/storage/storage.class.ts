@@ -14,7 +14,7 @@ export interface AppStorageConfig {
  */
 export class AppStorage<T> {
 
-  private logger: BehaviorSubject<T | null> = new BehaviorSubject<T | null>(this.value());
+  private logger: BehaviorSubject<T | null> = new BehaviorSubject<T | null>(this.value);
 
   /**
    * In order to use this class the initial setup needs to be provide
@@ -31,7 +31,7 @@ export class AppStorage<T> {
    *
    * @param data Data to be store
    */
-  public set(data: T): void {
+  public set(data: T | null): void {
     if (this.config.type === 'local') { localStorage.setItem(this.config.key, JSON.stringify(data)); }
     else if (this.config.type === 'session') { sessionStorage.setItem(this.config.key, JSON.stringify(data)); }
     else { throw new Error('Error with type of storage, can only be of type "session" or "local" storage.'); }
@@ -41,7 +41,7 @@ export class AppStorage<T> {
   /**
    * Return the data stored in the local or session storage
    */
-  public value(): T | null {
+  public get value(): T | null {
     if (this.config.type === 'local') {
       const theresData = localStorage.getItem(this.config.key) !== null;
       return theresData ? JSON.parse(localStorage.getItem(this.config.key) || '') as T : null;
