@@ -5,7 +5,7 @@ export interface AppJobDetails {
   id?: string;
   name: string;
   isCurrent: boolean;
-  description: string;
+  description: string[];
   year: number;
   role: string;
   imageUrls: string[];

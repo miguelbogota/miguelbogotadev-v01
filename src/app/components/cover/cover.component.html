@@ -1,9 +1,9 @@
 <!-- Validation to make sure the position number has been passed -->
-<ng-container *ngIf="imagePosition !== null">
+<ng-container *ngIf="contentService.getContent() | async as content">
   <!-- Image rendering the cover for the page -->
   <img
     class="cover-image"
-    *ngIf="contentService.getContent() | async as content"
+    *ngIf="imagePosition !== null && content.imageUrls.length > 0 && content.imageUrls.length > imagePosition"
     [src]="content.imageUrls[imagePosition].url"
     [alt]="content.imageUrls[imagePosition].label"
   />

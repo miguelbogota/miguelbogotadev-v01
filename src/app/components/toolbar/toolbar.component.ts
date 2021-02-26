@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Route } from '@angular/router';
 import { ContentService } from '@app-core/services/content/content.service';
 
 @Component({
@@ -13,10 +12,10 @@ export class ToolbarComponent {
     public contentService: ContentService,
   ) { }
 
-  public navigationLinks: Route[] = [
-    { path: 'works' },
-    { path: '' },
-    { path: 'contact' },
+  public navigationLinks = [
+    { path: 'works', label: 'works' },
+    { path: '', label: 'profile' },
+    { path: 'contact', label: 'contact' },
   ];
 
 }

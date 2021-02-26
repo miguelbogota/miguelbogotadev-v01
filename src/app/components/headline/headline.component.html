@@ -2,11 +2,8 @@
 <h1 class="headline">{{ text | uppercase }}</h1>
 
 <!-- Changing tags with typewritter effect -->
-<h4
-  class="changing-tags"
-  *ngIf="contentService.getContent() | async as content"
->
-  {{ content.tags | typewritter:4 | async }}
+<h4 class="changing-tags" *ngIf="contentService.getContent() | async as content">
+  {{ content.tags | typewritter | async | uppercase }}
 </h4>
 
 <!-- Separator -->

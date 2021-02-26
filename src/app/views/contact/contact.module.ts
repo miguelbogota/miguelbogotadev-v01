@@ -1,25 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
-import { ProfileRoutingModule } from './profile.routing.module';
+import { ContactRoutingModule } from './contact.routing.module';
 // Components
-import { ProfileComponent } from './profile.component';
+import { ContactComponent } from './contact.component';
 // Imported Components
 import { CoverModule } from '@app-components/cover/cover.module';
 import { HeadlineModule } from '@app-components/headline/headline.module';
 import { FooterModule } from '@app-components/footer/footer.module';
-import { ProjectsModule } from '@app-components/projects/projects.module';
 
 @NgModule({
-  declarations: [ProfileComponent],
+  declarations: [ContactComponent],
   imports: [
     CommonModule,
-    RouterModule,
-    ProfileRoutingModule,
+    ContactRoutingModule,
     CoverModule,
     HeadlineModule,
     FooterModule,
-    ProjectsModule,
   ],
+  exports: [ContactComponent],
 })
-export class ProfileModule { }
+export class ContactModule { }

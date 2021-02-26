@@ -1,0 +1,9 @@
+<!-- Grid with the projects -->
+<div class="grid">
+  <app-project-tile *ngFor="let project of jobs" [project]="project"></app-project-tile>
+</div>
+
+<!-- Button to load more projects -->
+<button class="load-more-button">
+  <span class="load-more-button-text">LOAD MORE</span>
+</button>

@@ -4,8 +4,8 @@
 export interface AppContent {
   name: string;
   headline: string;
-  about: string;
-  photoUrl: string;
+  about: string[];
+  works: string[];
   imageUrls: {
     url: string;
     label: string;

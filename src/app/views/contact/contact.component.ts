@@ -4,11 +4,11 @@ import { ContentService } from '@app-core/services/content/content.service';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.scss'],
+  selector: 'app-contact',
+  templateUrl: './contact.component.html',
+  styleUrls: ['./contact.component.scss'],
 })
-export class ProfileComponent implements OnInit, OnDestroy {
+export class ContactComponent implements OnInit, OnDestroy {
 
   constructor(
     public contentService: ContentService,

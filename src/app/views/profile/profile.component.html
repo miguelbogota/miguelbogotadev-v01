@@ -1,1 +1,41 @@
-<p>profile works!</p>
+<app-cover [imagePosition]="0"></app-cover>
+<app-headline [text]="content ? content.headline : ''"></app-headline>
+
+<!-- About text in the page -->
+<div class="about">
+  <p class="about-text" *ngFor="let paragraph of content?.about">
+    {{ paragraph }}
+  </p>
+</div>
+
+<!-- Skills -->
+<div class="skills">
+  <!-- Skill section title -->
+  <h3 class="skill-title">TECHNOLOGIES I ENJOY WORKING WITH</h3>
+  <div class="skill-column" *ngFor="let skill of content?.skills">
+    <!-- Category of the skills -->
+    <h5 class="skill-column-title">{{ skill.category | uppercase}}</h5>
+    <!-- List with the skill names -->
+    <ul class="skill-column-values">
+      <!-- Loop to render each skill value -->
+      <li class="skill-column-values-single" *ngFor="let skillName of skill.skillNames">
+        {{ skillName }}
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- Recent works -->
+<div class="recent-works">
+  <!-- Recent works title -->
+  <h3 class="recent-works-title">RECENT WORKS</h3>
+  <!-- Recent projects -->
+  <app-projects [initialSize]="4"></app-projects>
+  <!-- Button to the works page -->
+  <a class="recent-works-button" [routerLink]="['/works']">
+    <span class="recent-works-button-text">VIEW ALL</span>
+    <i class="recent-works-button-icon bx bxs-chevron-right"></i>
+  </a>
+</div>
+
+<app-footer></app-footer>

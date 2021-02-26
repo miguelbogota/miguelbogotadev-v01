@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
-import { ProfileRoutingModule } from './profile.routing.module';
+import { WorksRoutingModule } from './works.routing.module';
 // Components
-import { ProfileComponent } from './profile.component';
+import { WorksComponent } from './works.component';
 // Imported Components
 import { CoverModule } from '@app-components/cover/cover.module';
 import { HeadlineModule } from '@app-components/headline/headline.module';
@@ -11,15 +10,15 @@ import { FooterModule } from '@app-components/footer/footer.module';
 import { ProjectsModule } from '@app-components/projects/projects.module';
 
 @NgModule({
-  declarations: [ProfileComponent],
+  declarations: [WorksComponent],
   imports: [
     CommonModule,
-    RouterModule,
-    ProfileRoutingModule,
+    WorksRoutingModule,
     CoverModule,
     HeadlineModule,
     FooterModule,
     ProjectsModule,
   ],
+  exports: [WorksComponent],
 })
-export class ProfileModule { }
+export class WorksModule { }

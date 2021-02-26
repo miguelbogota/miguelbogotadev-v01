@@ -1,0 +1,22 @@
+<app-cover [imagePosition]="1"></app-cover>
+
+<!-- View if open for new jobs -->
+<ng-container *ngIf="content?.isOpenForJobs; else unavailable">
+  <app-headline text="GET IN TOUCH"></app-headline>
+
+  <p class="send-email">Please, send me an email with your project and talk about it. I would like to hear about it and... bla bla bla</p>
+
+  <!-- Email and copy button -->
+  <p class="email">{{ content?.email }}</p>
+  <button class="email-copy-button">
+    <i class='email-copy-button-icon bx bxs-copy'></i>
+  </button>
+
+</ng-container>
+
+<!-- If unavailable only show headline -->
+<ng-template #unavailable>
+  <app-headline [text]="'SORRY,\nI’M UNAVAILABLE\nFOR NEW PROJECTS\nAT THIS MOMENT'"></app-headline>
+</ng-template>
+
+<app-footer></app-footer>

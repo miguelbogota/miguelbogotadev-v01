@@ -23,6 +23,7 @@
       *ngFor="let socialLink of socialLinks"
       [href]="socialLink.link"
       [attr.aria-label]="socialLink.label"
+      target="_blank"
     >
       <!-- Social network icon -->
       <i aria-hidden="true" [class]="'icon ' + socialLink.icon"></i>
