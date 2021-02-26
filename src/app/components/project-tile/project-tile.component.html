@@ -1,1 +1,6 @@
-<p>project-tile works!</p>
+<!-- Images to show in the carousel -->
+<img
+  *ngFor="let image of project?.imageUrls"
+  [src]="image"
+  [alt]="'Image with ' + project?.name + ' screenshot'"
+/>

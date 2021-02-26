@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, HostListener, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { AppJobDetails } from '@app-core/models/job-details.model';
 
 @Component({
@@ -8,8 +9,15 @@ import { AppJobDetails } from '@app-core/models/job-details.model';
 })
 export class ProjectTileComponent {
 
-  constructor() { }
+  constructor(
+    public router: Router,
+  ) { }
 
   @Input() public project: AppJobDetails | null = null;
+
+  @HostListener('click')
+  public onClick() {
+    this.router.navigate([`/works/${this.project?.id}`]);
+  }
 
 }
