@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-// Imported Components
-import { NavMenuModule } from '@app-components/nav-menu/nav-menu.module';
 // Components
 import { ToolbarComponent } from './toolbar.component';
 
@@ -11,7 +9,6 @@ import { ToolbarComponent } from './toolbar.component';
   imports: [
     CommonModule,
     RouterModule,
-    NavMenuModule,
   ],
   exports: [ToolbarComponent],
 })

@@ -1,5 +1,5 @@
 /**
- * Social network link in the toolbar.
+ * Social network link in the footer.
  */
 export interface AppSocialLink {
   label: string;

@@ -1,0 +1,37 @@
+<!-- Contact me button if open for jobs -->
+<div class="contact" *ngIf="showContactButton && (contentService.getContent() | async)?.isOpenForJobs">
+
+  <h2 class="contact-title">NEED HELP WITH A PROJECT?</h2>
+
+  <!-- Button to the contact page -->
+  <a class="contact-button" [routerLink]="['/contact']">
+    <span class="contact-button-text">LET'S TALK</span>
+    <i class="contact-button-icon bx bxs-chevron-right"></i>
+  </a>
+
+</div>
+
+<!-- Footer with the social network links -->
+<footer>
+
+  <h4 class="social-network-title">FIND ME AROUND THE WEB</h4>
+
+  <!-- Social network links -->
+  <div class="social-network">
+    <a
+      class="social-network-link"
+      *ngFor="let socialLink of socialLinks"
+      [href]="socialLink.link"
+      [attr.aria-label]="socialLink.label"
+    >
+      <!-- Social network icon -->
+      <i aria-hidden="true" [class]="'icon ' + socialLink.icon"></i>
+    </a>
+  </div>
+
+  <!-- Copyright statement -->
+  <small class="copyright">
+    &copy; Miguel Bogota {{ currentYear }}
+  </small>
+
+</footer>

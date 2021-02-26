@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { AppSocialLink } from '@app-core/models/social-link.model';
+import { Route } from '@angular/router';
+import { ContentService } from '@app-core/services/content/content.service';
 
 @Component({
   selector: 'app-toolbar',
@@ -8,10 +9,14 @@ import { AppSocialLink } from '@app-core/models/social-link.model';
 })
 export class ToolbarComponent {
 
-  socialLinks: AppSocialLink[] = [
-    { label: 'GitHub profile link', icon: 'bx bxl-github', link: 'https://github.com/miguelbogota' },
-    { label: 'LinkedIn profile link', icon: 'bx bxl-linkedin-square', link: 'https://linkedin.com/in/miguelbogota' },
-    { label: 'Instagram profile link', icon: 'bx bxl-instagram-alt', link: 'https://instagram.com/migue_bogota' },
+  constructor(
+    public contentService: ContentService,
+  ) { }
+
+  public navigationLinks: Route[] = [
+    { path: 'works' },
+    { path: '' },
+    { path: 'contact' },
   ];
 
 }

@@ -4,10 +4,10 @@ import { SwUpdate } from '@angular/service-worker';
 @Component({
   selector: 'app-root',
   template: `
-    <!-- Toolbar with the navigation and the account information -->
-    <app-toolbar></app-toolbar>
     <!-- Container for the whole page -->
     <div class="container">
+    <!-- Toolbar with the navigation and the account information -->
+    <app-toolbar></app-toolbar>
       <!-- Routing to all the views -->
       <router-outlet></router-outlet>
     </div>

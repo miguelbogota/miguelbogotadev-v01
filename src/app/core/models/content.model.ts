@@ -6,7 +6,15 @@ export interface AppContent {
   headline: string;
   about: string;
   photoUrl: string;
-  imageUrls: string[];
-  skills: string[];
+  imageUrls: {
+    url: string;
+    label: string;
+  }[];
+  skills: {
+    category: string;
+    skillNames: string[];
+  }[];
+  email: string;
+  tags: string[];
   isOpenForJobs: boolean;
 }

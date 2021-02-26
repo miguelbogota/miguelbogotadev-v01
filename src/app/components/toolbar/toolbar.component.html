@@ -1,15 +1,18 @@
-<nav class="toolbar container">
+<!-- Page Name -->
+<h2 class="toolbar-name" *ngIf="contentService.getContent() | async as content">
+  {{ content.name | uppercase }}
+</h2>
 
-  <!-- Navigation menu -->
-  <app-nav-menu></app-nav-menu>
-
-  <a class="toolbar-home-link" routerLink="/">MIGUEL BOGOTA</a>
-
-  <!-- Social network icons -->
-  <div class="toolbar-social">
-    <!-- For with all the link to the different social networks -->
-    <a *ngFor="let socialLink of socialLinks" class="toolbar-social-link" [href]="[socialLink.link]" target="_blank">
-      <i [class]="'toolbar-social-link-icon ' + socialLink.icon"></i>
-    </a>
-  </div>
+<!-- Navigation bar with links -->
+<nav>
+  <!-- Loop rendering all the links -->
+  <a
+    class="toolbar-link"
+    *ngFor="let link of navigationLinks"
+    [routerLink]="['/' + link.path]"
+    routerLinkActive="link-active"
+    [routerLinkActiveOptions]="{ exact: true }"
+  >
+    {{ link.path | uppercase}}
+  </a>
 </nav>
