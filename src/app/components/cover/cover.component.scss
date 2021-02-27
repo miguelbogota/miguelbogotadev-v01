@@ -1,0 +1,15 @@
+:host {
+  display: flex;
+  align-items: center;
+  margin: var(--space-small) 0px;
+  max-height: 290px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 2px;
+
+  .cover-image {
+    display: block;
+    width: 100%;
+    flex: none;
+  }
+}
