@@ -8,16 +8,10 @@ import { concatMap, delay, ignoreElements, map, repeat, take } from 'rxjs/operat
 export class TypewritterPipe implements PipeTransform {
 
   public transform(values: string[]): Observable<string> {
-
     // Shuffle array order to start with something different always
-    for (let i = values.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [values[i], values[j]] = [values[j], values[i]];
-    }
-
-    return from(values ? values : [])
+    return from(values.sort( () => .5 - Math.random()))
       .pipe(
-        delay(900),
+        delay(1500),
         concatMap(word => concat(
           this.type(word, 120),                       // type
           of('').pipe(delay(60000), ignoreElements()), // pause with text
