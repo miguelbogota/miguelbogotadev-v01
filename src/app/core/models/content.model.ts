@@ -6,6 +6,7 @@ export interface AppContent {
   headline: string;
   about: string[];
   works: string[];
+  projectCount: number;
   imageUrls: {
     url: string;
     label: string;

@@ -18,7 +18,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 
   private jobsSubscription: Subscription | null = null;
 
-  public jobs: AppJobDetails[] | null = null;
+  public jobs: AppJobDetails[] = [];
 
   public ngOnInit(): void {
     this.jobsSubscription = this.jobService.getJobs().subscribe(jobs => this.jobs = jobs);
