@@ -60,7 +60,6 @@
   .recent-works {
     max-width: var(--max-width);
     margin: 0px auto var(--space-large);
-    overflow: hidden;
     text-align: right;
   
     &-title {
@@ -77,7 +76,6 @@
       --hover-color: var(--color-accent-hover);
       --active-color: var(--color-accent-active);
       --font-size: var(--size-button);
-      margin: var(--space-small) 0px 0px;
     }
   }
 }

@@ -1,0 +1,23 @@
+:host {
+  display: block;
+  text-align: center;
+  --max-width: 650px;
+
+  .works-headline {
+    max-width: var(--max-width);
+    margin: 0px auto var(--space-large);
+    
+    &-text {
+      font-size: var(--size-paragraph);
+      font-family: var(--barlow);
+      font-weight: 300;
+      line-height: var(--size-subtitle);
+    }
+  }
+
+  .projects {
+    max-width: 650px;
+    margin: 0px auto var(--space-large);
+  }
+
+}

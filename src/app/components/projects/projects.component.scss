@@ -1,4 +1,21 @@
 :host {
   display: block;
   text-align: center;
+  width: 100%;
+  overflow: hidden;
+
+  .grid {
+    margin: 0px 0px var(--space-small);
+    
+  }
+  
+  .load-more-button {
+    --text-color: #8b8b8b;
+    --background-color: #a3a3a33f;
+    --hover-color: #a3a3a363;
+    --active-color: #a3a3a385;
+    --font-size: var(--size-button);
+    width: 100%;
+    margin: 0px 0px var(--space-small);
+  }
 }
