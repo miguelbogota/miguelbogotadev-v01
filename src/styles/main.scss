@@ -1,10 +1,12 @@
 @import "normalize";
-@import "colors";
+@import "variables";
 
 // Default fonts for the library.
 * {
-  font-family: "Barlow", "Roboto", "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: var(--barlow-semi-condensed);
+  color: var(--color-text);
   font-weight: 400;
+  text-decoration: none;
 }
 
 // Body will have a 14px padding for smaller screens.

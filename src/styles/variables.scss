@@ -1,0 +1,24 @@
+:root {
+  // Colors
+  --color-text: #525252;
+  --color-accent: #009C8B;
+  --color-accent-transparent: #009c8a48;
+
+  // Fonts
+  --barlow: "Barlow", "Roboto", "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --barlow-semi-condensed: "Barlow Semi Condensed", "Roboto", "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --barlow-condensed: "Barlow Condensed", "Roboto", "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  // Sizes
+  --space-none: 0px;
+  --space-small: 16px;
+  --space-normal: 25px;
+  --space-medium: 45px;
+  --space-large: 70px;
+
+  // Font Sizes
+  --size-title: 2rem;
+  --size-subtitle: 1.5rem;
+  --size-paragraph: 1rem;
+  --size-button: 1.1rem;
+}

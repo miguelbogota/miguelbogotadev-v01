@@ -1,0 +1,26 @@
+:host {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-large) 0px var(--space-small);
+
+  .toolbar-name {
+    font-size: var(--size-title);
+    font-weight: 500;
+    margin: 0px 0px var(--space-normal);
+  }
+
+  .toolbar-links {
+    .toolbar-link {
+      font-family: var(--barlow);
+      font-weight: 300;
+      padding: 0px var(--space-small);
+      
+      &.link-active {
+        color: var(--color-accent);
+        font-weight: 600;
+      }
+    }
+  }
+}
