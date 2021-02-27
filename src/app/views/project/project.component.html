@@ -1,4 +1,4 @@
-<button class="close-button">
+<button class="close-button" [routerLink]="['/works']">
   <i class='close-button-icon bx bx-x'></i>
 </button>
 
@@ -33,6 +33,7 @@
 </div>
 
 <!-- Project image... -->
+<app-image-slider [imageUrls]="project ? project.imageUrls : []"></app-image-slider>
 
 <!-- External links to take a look to the project. Needs to have at least 1 link -->
 <div class="project-external" *ngIf="project && (project.gitUrl || project.webUrl)">

@@ -1,6 +1,6 @@
-<!-- Images to show in the carousel -->
+<!-- Show first image in the array as the main one -->
 <img
-  *ngFor="let image of project?.imageUrls"
-  [src]="image"
-  [alt]="'Image with ' + project?.name + ' screenshot'"
+  *ngIf="project && project.imageUrls.length > 0"
+  [src]="project.imageUrls[0]"
+  [alt]="'Screenshot of the project: ' + project?.name"
 />
