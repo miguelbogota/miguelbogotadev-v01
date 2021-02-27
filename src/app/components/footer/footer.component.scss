@@ -16,21 +16,12 @@
     }
     &-button {
       padding: var(--space-small) var(--space-medium);
-      background-color: var(--color-accent);
-      border-radius: 2px;
-      font-size: var(--size-button);
-      border: none;
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-
-      &-text {
-        color: #f3f3f3;
-        margin-right: var(--space-small);
-      }
-      &-icon {
-        color: #f3f3f3;
-      }
+      --text-color: #f1f1f1;
+      --ripple-color: #084740;
+      --background-color: var(--color-accent);
+      --hover-color: #048b7c;
+      --active-color: #077e70;
+      --font-size: var(--size-button);
     }
   }
   
@@ -48,10 +39,6 @@
         padding: 4px;
         margin: 0px 6px;
         font-size: var(--size-title);
-
-        &-icon {
-
-        }
       }
     }
   }
