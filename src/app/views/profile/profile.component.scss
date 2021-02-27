@@ -1,0 +1,83 @@
+:host {
+  display: block;
+  text-align: center;
+  --max-width: 650px;
+
+  .about {
+    max-width: var(--max-width);
+    margin: 0px auto var(--space-large);
+    
+    &-text {
+      font-size: var(--size-paragraph);
+      font-family: var(--barlow);
+      font-weight: 300;
+      line-height: var(--size-subtitle);
+    }
+  }
+
+  .skills {
+    max-width: var(--max-width);
+    margin: 0px auto var(--space-large);
+
+    .skill-title {
+      font-family: var(--barlow-semi-condensed);
+      font-size: var(--size-subtitle);
+      font-weight: 500;
+      margin: 0px 0px var(--space-medium);
+    }
+
+    .skill-column-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      width: 100%;
+      box-sizing: border-box;
+
+      .skill-column {
+        flex: 1;
+        min-width: fit-content;
+        margin: 0px 0px var(--space-normal);
+
+        &-title {
+          font-family: var(--barlow-semi-condensed);
+          font-size: var(--size-text);
+          font-weight: 500;
+          margin: 0px 0px var(--space-normal);
+        }
+        &-values {
+          padding: var(--space-none);
+          &-single {
+            font-size: var(--size-paragraph);
+            font-family: var(--barlow);
+            font-weight: 300;
+            line-height: var(--size-subtitle);
+          }
+        }
+      }
+    }
+  }
+
+  .recent-works {
+    max-width: var(--max-width);
+    margin: 0px auto var(--space-large);
+    overflow: hidden;
+    text-align: right;
+  
+    &-title {
+      font-family: var(--barlow-semi-condensed);
+      font-size: var(--size-subtitle);
+      font-weight: 500;
+      margin: 0px 0px var(--space-medium);
+      text-align: center;
+    }
+
+    &-button {
+      --text-color: var(--color-accent);
+      --background-color: var(--color-accent-transparent);
+      --hover-color: var(--color-accent-hover);
+      --active-color: var(--color-accent-active);
+      --font-size: var(--size-button);
+      margin: var(--space-small) 0px 0px;
+    }
+  }
+}
