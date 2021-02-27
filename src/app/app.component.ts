@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SwUpdate } from '@angular/service-worker';
+import { NavigationService } from '@app-core/services/navigation/navigation.service';
 
 @Component({
   selector: 'app-root',
@@ -18,6 +19,7 @@ export class AppComponent implements OnInit {
 
   constructor(
     private swUpdate: SwUpdate,
+    public navigation: NavigationService, // Added to load the initial state
   ) { }
 
   public ngOnInit(): void {

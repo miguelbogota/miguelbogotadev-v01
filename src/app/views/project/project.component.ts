@@ -1,7 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Location } from '@angular/common';
 import { AppJobDetails } from '@app-core/models/job-details.model';
 import { JobService } from '@app-core/services/job/job.service';
+import { NavigationService } from '@app-core/services/navigation/navigation.service';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -13,6 +15,9 @@ export class ProjectComponent implements OnInit, OnDestroy {
 
   constructor(
     private activetedRoute: ActivatedRoute,
+    private router: Router,
+    private location: Location,
+    private navigation: NavigationService,
     public jobService: JobService,
   ) { }
 
@@ -29,6 +34,15 @@ export class ProjectComponent implements OnInit, OnDestroy {
 
   public ngOnDestroy(): void {
     this.activatedRouteSubscription?.unsubscribe();
+  }
+
+  /**
+   * Depending of the user initial way to get to the page
+   * it could send back or to the '/works' page.
+   */
+  public closeDialog(): void {
+    if (this.navigation.isPreviousPageInDomain) { this.location.back(); }
+    else { this.router.navigate(['/works']); }
   }
 
 }
