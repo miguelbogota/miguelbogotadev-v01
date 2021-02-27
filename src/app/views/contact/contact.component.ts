@@ -26,4 +26,13 @@ export class ContactComponent implements OnInit, OnDestroy {
     this.contentSubscription?.unsubscribe();
   }
 
+  /**
+   * Request for access to copy to the clipboard and copies it.
+   */
+  public copyToClipboard(): void {
+    navigator.clipboard.writeText('miguelbogota.dev@outlook.com')
+      // .then(() => console.log('Email copied to the clipboard')) // Change console.log for a notification
+      .catch((err) => console.error('Could not copy text: ', err));
+  }
+
 }

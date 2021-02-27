@@ -7,9 +7,9 @@
   <p class="send-email">Please, send me an email with your project and talk about it. I would like to hear about it and... bla bla bla</p>
 
   <!-- Email and copy button -->
-  <p class="email">{{ content?.email }}</p>
-  <button class="email-copy-button">
-    <i class='email-copy-button-icon bx bxs-copy'></i>
+  <button class="copy-email button" (click)="copyToClipboard()">
+    <p class="copy-email-mail">{{ content?.email }}</p>
+    <i class='copy-email-icon bx bxs-copy'></i>
   </button>
 
 </ng-container>

@@ -1,0 +1,27 @@
+:host {
+  display: block;
+  text-align: center;
+  --max-width: 400px;
+
+  .send-email {
+    max-width: var(--max-width);
+    margin: 0px auto var(--space-medium);
+  }
+
+  .copy-email {
+    --background-color: #adadad21;
+    --font-size: var(--size-button);
+    margin: 0px auto var(--space-large);
+    padding: 12px var(--space-small);
+    
+    &-mail {
+      margin-right: 2px;
+      text-decoration: underline;
+      margin: 0px 0.8rem 0px 0px;
+    }
+    &-icon {
+      padding: 0px;
+      color: var(--color-accent);
+    }
+  }
+}
