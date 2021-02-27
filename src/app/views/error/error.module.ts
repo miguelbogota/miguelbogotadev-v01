@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ErrorRoutingModule } from './error.routing.module';
-import { RouterModule } from '@angular/router';
 // Components
 import { ErrorComponent } from './error.component';
 
@@ -11,7 +10,6 @@ import { ErrorComponent } from './error.component';
   ],
   imports: [
     CommonModule,
-    RouterModule,
     ErrorRoutingModule,
   ],
 })
