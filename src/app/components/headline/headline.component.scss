@@ -1,0 +1,30 @@
+:host {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-normal) 0px var(--space-small);
+
+  .headline {
+    font-size: var(--size-title);
+    font-weight: 500;
+    margin: 0px 0px var(--space-normal);
+  }
+
+  .changing-tags {
+    display: block;
+    margin: 0px 0px var(--space-medium);
+    font-family: var(--barlow);
+    font-weight: 300;
+    padding: 4px var(--space-small);
+    min-height: var(--size-button);
+  }
+
+  .separator {
+    height: 0px;
+    border: 0px solid #8585857e;
+    width: 100%;
+    border-top: 1px solid #8585857e;
+    margin: var(--space-none) 0px var(--space-small);
+  }
+}

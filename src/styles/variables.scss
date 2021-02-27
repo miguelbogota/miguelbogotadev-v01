@@ -1,6 +1,9 @@
 :root {
   // Colors
+  --color-background: #ffffff;
   --color-text: #525252;
+  // --color-background: #1f1f1f;
+  // --color-text: #d8d8d8;
   --color-accent: #009C8B;
   --color-accent-transparent: #009c8a48;
 
@@ -11,14 +14,14 @@
 
   // Sizes
   --space-none: 0px;
-  --space-small: 16px;
+  --space-small: 15px;
   --space-normal: 25px;
-  --space-medium: 52px;
+  --space-medium: 38px;
   --space-large: 66px;
 
   // Font Sizes
   --size-title: 2rem;
   --size-subtitle: 1.5rem;
   --size-paragraph: 1rem;
-  --size-button: 1.1rem;
+  --size-button: 1.15rem;
 }
