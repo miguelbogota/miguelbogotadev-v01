@@ -15,7 +15,8 @@
     .toolbar-link {
       font-family: var(--barlow);
       font-weight: 300;
-      padding: 4px var(--space-small);
+      padding: 4px 6px;
+      margin: 0px 8px;
       
       &.link-active {
         color: var(--color-accent);
