@@ -74,13 +74,12 @@ export class JobService {
    *
    * @param jobId Document id to get.
    */
-  public getJob(jobId: string): Observable<AppJobDetails | null> {
+  public getJob(jobId: string): Promise<AppJobDetails | null> {
     return this.collectionRef
       .doc(jobId)
-      .snapshotChanges()
-      .pipe(
-        map(data => data ? ({ id: data.payload.id, ...data.payload.data() as AppJobDetails }) : null),
-      );
+      .get()
+      .toPromise()
+      .then(data => data ? ({ id: data.id, ...data.data() as AppJobDetails }) : null);
   }
 
   /**

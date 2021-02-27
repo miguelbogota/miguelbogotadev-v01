@@ -17,6 +17,5 @@ import { FooterModule } from '@app-components/footer/footer.module';
     HeadlineModule,
     FooterModule,
   ],
-  exports: [ContactComponent],
 })
 export class ContactModule { }

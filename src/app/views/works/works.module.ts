@@ -19,6 +19,5 @@ import { ProjectsModule } from '@app-components/projects/projects.module';
     FooterModule,
     ProjectsModule,
   ],
-  exports: [WorksComponent],
 })
 export class WorksModule { }
