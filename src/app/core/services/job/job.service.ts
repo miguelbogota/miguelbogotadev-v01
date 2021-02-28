@@ -42,7 +42,7 @@ export class JobService {
             .toPromise()
             .then(
               action => {
-                const isLast = this.projectCount === this.jobDetailsSubject.value.length + 1;
+                const isLast = this.projectCount === this.jobDetailsSubject.value.length;
                 // Save lastVisible for pagination
                 this.lastVisible = isLast ? null : action.docs[action.docs.length - 1];
                 return action.docs.map(a => ({ id: a.id, ...a.data() as AppJobDetails }));
