@@ -25,6 +25,7 @@
     --active-color: #a3a3a37e;
     --font-size: var(--size-button);
     width: 100%;
+    margin: 0px 0px var(--space-small);
 
     @media (max-width: 790px) {
       width: calc(100% - (var(--space-small) * 2));
