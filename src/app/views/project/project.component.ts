@@ -24,11 +24,17 @@ export class ProjectComponent implements OnInit, OnDestroy {
   private activatedRouteSubscription: Subscription | null = null;
 
   public project: AppJobDetails | null = null;
+  public isLoading = true;
 
   public ngOnInit(): void {
     this.activatedRouteSubscription = this.activetedRoute.paramMap.subscribe(params => {
       const projectId = params.get('projectId');
-      if (projectId) { this.jobService.getJob(projectId).then(project => this.project = project); }
+      if (projectId) {
+        this.jobService.getJob(projectId).then(project => {
+          this.project = project;
+          this.isLoading = false;
+        });
+      }
     });
   }
 
