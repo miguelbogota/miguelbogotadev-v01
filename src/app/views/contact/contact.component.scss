@@ -6,6 +6,10 @@
   .send-email {
     max-width: var(--max-width);
     margin: 0px auto var(--space-medium);
+    font-size: var(--size-paragraph);
+    font-family: var(--barlow);
+    font-weight: 300;
+    line-height: var(--size-subtitle);
   }
 
   .copy-email {
