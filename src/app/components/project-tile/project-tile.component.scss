@@ -3,7 +3,7 @@
   // Removes the gap space from the height calculation
   --ratio-half: calc(50% - (var(--space-small) / 2));
   --ratio: var(--ratio-complete);
-  
+
   @media (max-width: 790px) {
     // Gap gets lower in smaller screen
     --ratio-half: calc(50% - 1px);
@@ -17,11 +17,17 @@
   position: relative;
   cursor: pointer;
 
-  &:nth-child(11n+2) {
+  &:nth-child(11n + 2) {
     grid-row-start: span 2;
   }
-  
-  &:nth-child(11n+4) {
+  &:nth-child(11n + 4) {
+    grid-column-start: span 2;
+    --ratio: var(--ratio-half);
+  }
+  &:nth-child(11n + 7) {
+    grid-row-start: span 2;
+  }
+  &:nth-child(11n + 10) {
     grid-column-start: span 2;
     --ratio: var(--ratio-half);
   }
