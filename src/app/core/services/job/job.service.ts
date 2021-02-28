@@ -19,6 +19,8 @@ export class JobService {
   private lastVisible: QueryDocumentSnapshot<AppJobDetails> | null | undefined;
   private projectCount: number | null = null;
 
+  private isLast = this.projectCount === this.jobDetailsSubject.value.length;
+
   constructor(
     private afs: AngularFirestore,
     private contentService: ContentService,
@@ -42,9 +44,9 @@ export class JobService {
             .toPromise()
             .then(
               action => {
-                const isLast = this.projectCount === this.jobDetailsSubject.value.length;
+                this.isLast = this.projectCount === this.jobDetailsSubject.value.length;
                 // Save lastVisible for pagination
-                this.lastVisible = isLast ? null : action.docs[action.docs.length - 1];
+                this.lastVisible = this.isLast ? null : action.docs[action.docs.length - 1];
                 return action.docs.map(a => ({ id: a.id, ...a.data() as AppJobDetails }));
               },
             ),
@@ -58,6 +60,13 @@ export class JobService {
    */
   public getJobs(): Observable<AppJobDetails[]> {
     return this.jobDetailsSubject;
+  }
+
+  /**
+   * Returns a boolean checking if you can load more data.
+   */
+  public get canLoadMore(): boolean {
+    return !this.isLast;
   }
 
   /**

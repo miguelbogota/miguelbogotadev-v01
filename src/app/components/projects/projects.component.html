@@ -4,4 +4,6 @@
 </div>
 
 <!-- Button to load more projects -->
-<button class="load-more-button button" (click)="jobService.loadMoreJobs(4)">LOAD MORE</button>
+<button class="load-more-button button" (click)="jobService.loadMoreJobs(4)">
+  {{ jobService.canLoadMore ? 'LOAD MORE' : 'NO MORE TO LOAD :C' }}
+</button>
