@@ -1,7 +1,7 @@
 <!-- Show first image in the array as the main one -->
 <img
   class="tile-image"
-  *ngIf="project && project.imageUrls.length > 0"
+  *ngIf="project && project.imageUrls && project.imageUrls.length > 0"
   [src]="project.imageUrls[0]"
   [alt]="'Screenshot of the project: ' + project?.name"
 />

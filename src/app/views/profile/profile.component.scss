@@ -36,7 +36,12 @@
       .skill-column {
         flex: 1;
         min-width: fit-content;
-        margin: 0px 0px var(--space-normal);
+
+        @media (max-width: 600px) {
+          &:nth-child(1) {
+            margin: 0px 0px var(--space-normal);
+          }
+        }
 
         &-title {
           font-family: var(--barlow-semi-condensed);
