@@ -5,8 +5,9 @@
 
   .works-container {
     max-width: var(--max-width);
+    margin: 0px auto var(--space-large);
     .works-headline {
-      margin: 0px auto var(--space-large);
+      margin: 0px auto var(--space-medium);
       &-text {
         font-size: var(--size-paragraph);
         font-family: var(--barlow);
