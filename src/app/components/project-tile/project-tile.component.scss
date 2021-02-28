@@ -1,0 +1,12 @@
+:host {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 2px;
+
+  .tile-image {
+    display: block;
+    width: 100%;
+    flex: none;
+  }
+}

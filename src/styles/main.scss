@@ -12,6 +12,7 @@
 
 // Body will have a 14px padding for smaller screens.
 body {
+  min-width: 320px;
   padding: 0px;
   background-color: var(--color-background);
   overflow-x: hidden;

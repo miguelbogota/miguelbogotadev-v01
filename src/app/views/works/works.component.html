@@ -1,13 +1,15 @@
 <app-cover [imagePosition]="2"></app-cover>
 <app-headline text="PROJECTS"></app-headline>
 
-<!-- Work small headline -->
-<div class="works-headline">
-  <p class="works-headline-text" *ngFor="let paragraph of (contentService.getContent() | async)?.works">
-    {{ paragraph }}
-  </p>
-</div>
+<div class="works-container">
+  <!-- Work small headline -->
+  <div class="works-headline">
+    <p class="works-headline-text" *ngFor="let paragraph of (contentService.getContent() | async)?.works">
+      {{ paragraph }}
+    </p>
+  </div>
 
-<app-projects class="projects"></app-projects>
+  <app-projects></app-projects>
+</div>
 
 <app-footer></app-footer>
