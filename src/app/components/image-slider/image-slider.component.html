@@ -1,14 +1,30 @@
 <!-- Image carousel -->
-<div class="carousel">
-  <img
-    class="carousel-image"
-    *ngFor="let imageUrl of imageUrls"
-    [src]="imageUrl"
-    alt="Screenshot of the project"
-  />
+<div
+  class="carousel"
+  [style.width]="getSliderWidth"
+  [style.transform]="getSliderPosition"
+  [style.transition]="getSliderTransition"
+  (transitionend)="handleTransitionEnd()"
+  (swiperight)="previousImage()"
+  (swipeleft)="nextImage()"
+>
+  <div class="carousel-slide" *ngIf="imageUrls.length > 1">
+    <img class="carousel-slide-image" [src]="imageUrls[imageUrls.length - 1]" alt="Screenshot of the project" draggable="false" />
+  </div>
+  <div class="carousel-slide" *ngFor="let imageUrl of imageUrls">
+    <img class="carousel-slide-image" [src]="imageUrl" alt="Screenshot of the project" draggable="false" />
+  </div>
+  <div class="carousel-slide" *ngIf="imageUrls.length > 1">
+    <img class="carousel-slide-image" [src]="imageUrls[0]" alt="Screenshot of the project" draggable="false" />
+  </div>
 </div>
 
 <!-- Controls for the carousel -->
-<div class="controls">
-  <!-- Do thing to change the images -->
+<div class="controls" *ngIf="imageUrls.length > 1">
+  <button
+    class="controls-button"
+    [ngClass]="{'current-image': i + 1 === sliderIndex}"
+    *ngFor="let imageUrl of imageUrls; let i = index"
+    (click)="toImage(i + 1)"
+  ></button>
 </div>

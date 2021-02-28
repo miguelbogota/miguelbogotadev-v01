@@ -1,4 +1,65 @@
 :host {
   display: block;
+  border-radius: 2px;
   overflow: hidden;
+  
+  .carousel {
+    display: flex;
+    padding: 0px 0px var(--space-normal);
+    touch-action: pan-y !important;
+
+    &-slide {
+      display: block;
+      overflow: hidden;
+      width: 100%;
+      position: relative;
+
+      &::before {
+        content: "";
+        display: block;
+        height: 0;
+        width: 0;
+        padding-bottom: 100%;
+      }
+
+      &-image {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        user-select: none;
+      }
+    }
+  }
+
+  .controls {
+    display: flex;
+    justify-content: center;
+
+    &-button {
+      display: inline-flex;
+      cursor: pointer;
+      outline: none;
+      white-space: nowrap;
+      user-select: none;
+      padding: 8px;
+      margin: 0px 7px;
+      border-radius: 50%;
+      border: 1px solid transparent;
+      transition: backgroun-color 0.5s linear;
+      background-color: #a3a3a348;
+      -webkit-tap-highlight-color: transparent;
+
+      @media (max-width: 700px) {
+        padding: 10px;
+        margin: 0px 10px;
+      }
+
+      &.current-image {
+        background-color: #009c8a63;
+      }
+    }
+  }
 }

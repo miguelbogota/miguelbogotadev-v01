@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, HammerModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 // Additionals
 import { AppRoutingModule } from './app.routing.module';
@@ -18,6 +18,7 @@ import { ToolbarModule } from '@app-components/toolbar/toolbar.module'; // Toolb
   ],
   imports: [
     BrowserModule,
+    HammerModule,
     // Additionals
     AppRoutingModule,
     BrowserAnimationsModule,
