@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { AppJobDetails } from '@app-core/models/job-details.model';
@@ -40,6 +40,14 @@ export class ProjectComponent implements OnInit, OnDestroy {
 
   public ngOnDestroy(): void {
     this.activatedRouteSubscription?.unsubscribe();
+  }
+
+  /**
+   * Bind escape key press down event to close the dialog.
+   */
+  @HostListener('document:keydown.escape')
+  public onKeyEscHandler() {
+    this.closeDialog();
   }
 
   /**
