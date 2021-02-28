@@ -14,7 +14,7 @@ export class JobService {
   private jobDetailsSubject = new BehaviorSubject<AppJobDetails[]>([]);
   private collectionRef;
   // Property allows to re-call a query and get more jobs
-  private size = new BehaviorSubject(4);
+  private size = new BehaviorSubject(3);
   private jobsObservable: Observable<AppJobDetails[]>;
   private lastVisible: QueryDocumentSnapshot<AppJobDetails> | null | undefined;
   private projectCount: number | null = null;

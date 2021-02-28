@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AppJobDetails } from '@app-core/models/job-details.model';
 import { JobService } from '@app-core/services/job/job.service';
 import { Subscription } from 'rxjs';
@@ -13,8 +13,6 @@ export class ProjectsComponent implements OnInit, OnDestroy {
   constructor(
     public jobService: JobService,
   ) { }
-
-  @Input() public initialSize = 7;
 
   private jobsSubscription: Subscription | null = null;
 

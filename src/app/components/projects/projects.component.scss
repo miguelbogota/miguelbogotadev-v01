@@ -1,4 +1,6 @@
 :host {
+  --gap-size: var(--space-small);
+
   display: block;
   text-align: center;
   overflow: hidden;
@@ -7,14 +9,15 @@
   @media (max-width: 790px) {
     width: calc(100% + 22px);
     margin: 0px -11px var(--space-small);
+    --gap-size: 2px
   }
 
   .grid {
-    width: calc(100% - var(--space-small));
+    width: calc(100% - var(--gap-size));
     margin: 0px 0px var(--space-small);
     transition: gap 0.2s linear;
     display: grid;
-    gap: var(--space-small);
+    gap: var(--gap-size);
     grid-template-columns: 50% 50%;
     grid-template-rows: auto;
   }
