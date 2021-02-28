@@ -74,12 +74,11 @@ export class JobService {
    *
    * @param jobId Document id to get.
    */
-  public getJob(jobId: string): Promise<AppJobDetails | null> {
-    return this.collectionRef
-      .doc(jobId)
-      .get()
-      .toPromise()
-      .then(data => data ? ({ id: data.id, ...data.data() as AppJobDetails }) : null);
+  public async getJob(jobId: string): Promise<AppJobDetails | null> {
+    const projectInState = this.jobDetailsSubject.value.find(project => project.id === jobId);
+    if (projectInState) { return projectInState; }
+    const data = await this.collectionRef.doc(jobId).get().toPromise();
+    return data ? ({ id: data.id, ...(data.data() as AppJobDetails) }) : null;
   }
 
   /**
