@@ -60,7 +60,7 @@ export const slideDown = [
   query(':leave', [style({ top: 0 })]),
   group([
     query(':enter', [animate('300ms linear')], { optional: true }),
-    query(':leave', [animate('280ms linear', style({ top: '100vh' }))]),
+    query(':leave', [animate('300ms linear', style({ top: '100vh' }))]),
   ]),
   query(':leave', animateChild()),
   query(':enter', animateChild(), { optional: true }),
