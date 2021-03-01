@@ -6,6 +6,7 @@ import { ProjectComponent } from './project.component';
 // Imported Components
 import { ImageSliderModule } from '@app-components/image-slider/image-slider.module';
 import { FooterModule } from '@app-components/footer/footer.module';
+import { SpinnersModule } from '@app-components/spinners/spinners.module';
 
 @NgModule({
   declarations: [ProjectComponent],
@@ -14,6 +15,7 @@ import { FooterModule } from '@app-components/footer/footer.module';
     ProjectRoutingModule,
     ImageSliderModule,
     FooterModule,
+    SpinnersModule,
   ],
 })
 export class ProjectModule { }
