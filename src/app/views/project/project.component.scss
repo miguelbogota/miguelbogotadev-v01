@@ -2,13 +2,16 @@
   --max-width: 650px;
 
   display: block;
-  position: absolute;
+  position: fixed;
   background-color: var(--color-background);
   width: 100vw;
   min-height: 100vh;
+  max-height: 100vh;
+  overflow-y: auto;
   left: 0px;
   top: 0px;
   box-shadow: 0px 0px 10px 0px #00000030;
+  z-index: 100;
 
   .loading-container {
     display: flex;

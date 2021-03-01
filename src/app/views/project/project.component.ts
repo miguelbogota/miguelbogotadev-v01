@@ -55,7 +55,7 @@ export class ProjectComponent implements OnInit, OnDestroy {
    * it could send back or to the '/works' page.
    */
   public closeDialog(): void {
-    if (this.navigation.isPreviousPageInDomain) { this.location.back(); }
+    if (this.navigation.isPreviousPageInDomain) { this.router.navigate([this.navigation.previousRoute]); }
     else { this.router.navigate(['/works']); }
   }
 

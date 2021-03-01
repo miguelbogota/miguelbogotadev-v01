@@ -21,12 +21,16 @@ export class NavigationService {
       )
       .subscribe((events: RoutesRecognized[]) => {
         this.navigationSubject.next(events[0].urlAfterRedirects);
-        this.routerSubscription.unsubscribe();
+        // this.routerSubscription.unsubscribe();
       });
   }
 
   public get isPreviousPageInDomain(): boolean {
     return this.navigationSubject.value !== 'previous-page-not-in-domain';
+  }
+
+  public get previousRoute(): string {
+    return this.navigationSubject.value;
   }
 
 }
