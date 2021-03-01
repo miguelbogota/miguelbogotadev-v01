@@ -41,11 +41,11 @@
       <h3 class="project-external-title">SEE ALSO IN</h3>
       <div class="project-external-links">
         <!-- Github repor link -->
-        <a class="project-link" *ngIf="project && project.gitUrl" [href]="project.gitUrl"> 
+        <a class="project-link" *ngIf="project && project.gitUrl" [href]="project.gitUrl" target="_blank"> 
           <i class='project-link-icon bx bxl-github'></i>
         </a>
         <!-- Live demo link -->
-        <a class="project-link" *ngIf="project && project.webUrl" [href]="project.webUrl">
+        <a class="project-link" *ngIf="project && project.webUrl" [href]="project.webUrl" target="_blank">
           <i class='project-link-icon bx bx-link-external'></i>
         </a>
       </div>
@@ -60,5 +60,6 @@
 </div>
 
 <ng-template #loading>
+  <!-- TODO: create a proper loading spinner -->
   Loading...
 </ng-template>
