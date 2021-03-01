@@ -22,6 +22,9 @@
     .copy-email {
       --background-color: #adadad21;
       --font-size: var(--size-button);
+      --text-color: var(--color-text);
+      --hover-color: #a3a3a35b;
+      --active-color: #a3a3a37e;
       padding: 12px var(--space-small);
       margin: 0px auto var(--space-small);
 
