@@ -17,7 +17,7 @@ export const slideRight = [
   query(':leave', animateChild()),
   group([
     query(':leave', [animate('220ms linear', style({ left: '-100%', opacity: 0 }))]),
-    query(':enter', [animate('220ms linear', style({ left: '14px', opacity: 1 }))]),
+    query(':enter', [animate('220ms linear', style({ left: 0, opacity: 1 }))]),
   ]),
   query(':enter', animateChild()),
 ];
@@ -39,7 +39,7 @@ export const slideLeft = [
   query(':leave', animateChild()),
   group([
     query(':leave', [animate('220ms linear', style({ left: '100%', opacity: 0 }))]),
-    query(':enter', [animate('220ms linear', style({ left: '14px', opacity: 1 }))]),
+    query(':enter', [animate('220ms linear', style({ left: 0, opacity: 1 }))]),
   ]),
   query(':enter', animateChild()),
 ];
