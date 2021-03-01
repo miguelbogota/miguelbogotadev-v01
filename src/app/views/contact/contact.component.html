@@ -11,11 +11,18 @@
     </p>
   </div>
 
-  <!-- Email and copy button -->
-  <button class="copy-email button" (click)="copyToClipboard()">
-    <p class="copy-email-mail">{{ content?.email }}</p>
-    <i class='copy-email-icon bx bxs-copy'></i>
-  </button>
+  <div class="copy-email-container">
+    <!-- Email and copy button -->
+    <button class="copy-email button" (click)="copyToClipboard()">
+      <p class="copy-email-mail">{{ content?.email }}</p>
+      <i class='copy-email-icon bx bxs-copy'></i>
+    </button>
+    
+    <!-- Copied message feedback -->
+    <div class="copied-message" *ngIf="hasBeenCopied" [@copiedMessageAnimation]>
+      Email copied to the clipboard
+    </div>
+  </div>
 
 </ng-container>
 

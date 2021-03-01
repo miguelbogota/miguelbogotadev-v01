@@ -1,3 +1,4 @@
+import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppContent } from '@app-core/models/content.model';
@@ -8,6 +9,22 @@ import { Subscription } from 'rxjs';
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss'],
+  animations: [
+    trigger('copiedMessageAnimation', [
+      transition(
+        ':enter', [
+          style({ opacity: 0 }),
+          animate('600ms 400ms linear', style({ opacity: 1 })),
+        ],
+      ),
+      transition(
+        ':leave', [
+          style({ opacity: 1 }),
+          animate('300ms linear', style({ opacity: 0 })),
+        ],
+      ),
+    ]),
+  ],
 })
 export class ContactComponent implements OnInit, OnDestroy {
 
@@ -17,6 +34,7 @@ export class ContactComponent implements OnInit, OnDestroy {
   ) { }
 
   private contentSubscription: Subscription | null = null;
+  public hasBeenCopied = false;
 
   public content: AppContent | null = null;
 
@@ -29,11 +47,19 @@ export class ContactComponent implements OnInit, OnDestroy {
   }
 
   /**
+   * Shows the copied message for a few secods.
+   */
+  private showCopiedMessage(): void {
+    this.hasBeenCopied = true;
+    setTimeout(() => this.hasBeenCopied = false, 2000);
+  }
+
+  /**
    * Request for access to copy to the clipboard and copies it.
    */
   public copyToClipboard(): void {
     navigator.clipboard.writeText('miguelbogota.dev@outlook.com')
-      // .then(() => console.log('Email copied to the clipboard')) // Change console.log for a notification
+      .then(() => this.showCopiedMessage())
       .catch((err) => console.error('Could not copy text: ', err));
   }
 
