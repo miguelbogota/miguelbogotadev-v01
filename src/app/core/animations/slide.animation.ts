@@ -4,13 +4,20 @@ import { animate, animateChild, group, query, style } from '@angular/animations'
 export const slideRight = [
   style({ position: 'relative' }),
   query(':enter, :leave', [
-    style({ position: 'absolute', left: 0, width: '100%', maxWidth: 'var(--max-window-width)' }),
+    style({
+      position: 'absolute',
+      left: 0,
+      width: '100%',
+      maxWidth: 'var(--max-window-width)',
+      padding: '0px 14px',
+      boxSizing: 'border-box',
+    }),
   ]),
   query(':enter', [style({ left: '100%', opacity: 0 })]),
   query(':leave', animateChild()),
   group([
-    query(':leave', [animate('220ms linear', style({ left: '-100%', opacity: 0 }))]),
-    query(':enter', [animate('220ms linear', style({ left: '14px', opacity: 1 }))]),
+    query(':leave', [animate('15000ms linear', style({ left: '-100%', opacity: 0 }))]),
+    query(':enter', [animate('15000ms linear', style({ left: '14px', opacity: 1 }))]),
   ]),
   query(':enter', animateChild()),
 ];
@@ -19,7 +26,14 @@ export const slideRight = [
 export const slideLeft = [
   style({ position: 'relative' }),
   query(':enter, :leave', [
-    style({ position: 'absolute', left: 0, width: '100%', maxWidth: 'var(--max-window-width)' }),
+    style({
+      position: 'absolute',
+      left: 0,
+      width: '100%',
+      maxWidth: 'var(--max-window-width)',
+      padding: '0px 14px',
+      boxSizing: 'border-box',
+    }),
   ]),
   query(':enter', [style({ left: '-100%', opacity: 0 })]),
   query(':leave', animateChild()),
