@@ -5,8 +5,6 @@
   // Colors
   --color-background: #ffffff;
   --color-text: #525252;
-  // --color-background: #141414;
-  // --color-text: #d8d8d8;
   --color-accent: #009C8B;
   --color-accent-transparent: #009c8a17;
   --color-accent-hover: #009c8a2f;
@@ -29,4 +27,14 @@
   --size-subtitle: 1.4rem;
   --size-paragraph: 1rem;
   --size-button: 1.1rem;
+
+  @media (prefers-color-scheme: dark) {
+    --color-background: #141414;
+    --color-text: #d8d8d8;
+  }
+  
+  @media (prefers-color-scheme: light) {
+    --color-background: #ffffff;
+    --color-text: #525252;
+  }
 }
