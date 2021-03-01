@@ -2,9 +2,9 @@
 <app-headline text="PROJECTS"></app-headline>
 
 <div class="works-container">
-  <!-- Work small headline -->
-  <div class="works-headline">
-    <p class="works-headline-text" *ngFor="let paragraph of (contentService.getContent() | async)?.works">
+  <!-- Page description -->
+  <div class="description">
+    <p class="description-text" *ngFor="let paragraph of (contentService.getContent() | async)?.pageDescriptions?.works">
       {{ paragraph }}
     </p>
   </div>

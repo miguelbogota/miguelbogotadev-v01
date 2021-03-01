@@ -4,7 +4,12 @@
 <ng-container *ngIf="content?.isOpenForJobs; else unavailable">
   <app-headline text="GET IN TOUCH"></app-headline>
 
-  <p class="send-email">Please, send me an email with your project and talk about it. I would like to hear about it and... bla bla bla</p>
+  <!-- Page description -->
+  <div class="description">
+    <p class="description-text" *ngFor="let paragraph of (contentService.getContent() | async)?.pageDescriptions?.contact">
+      {{ paragraph }}
+    </p>
+  </div>
 
   <!-- Email and copy button -->
   <button class="copy-email button" (click)="copyToClipboard()">

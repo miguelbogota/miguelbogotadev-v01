@@ -4,13 +4,14 @@
   text-align: center;
   touch-action: pan-y !important;
 
-  .send-email {
-    max-width: var(--max-width);
+  .description {
     margin: 0px auto var(--space-medium);
-    font-size: var(--size-paragraph);
-    font-family: var(--barlow);
-    font-weight: 300;
-    line-height: var(--size-subtitle);
+    &-text {
+      font-size: var(--size-paragraph);
+      font-family: var(--barlow);
+      font-weight: 300;
+      line-height: var(--size-subtitle);
+    }
   }
 
   .copy-email {
@@ -18,7 +19,7 @@
     --font-size: var(--size-button);
     margin: 0px auto var(--space-large);
     padding: 12px var(--space-small);
-    
+
     &-mail {
       margin-right: 2px;
       text-decoration: underline;
