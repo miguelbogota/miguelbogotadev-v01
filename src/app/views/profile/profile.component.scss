@@ -1,7 +1,8 @@
 :host {
+  --max-width: 650px;
   display: block;
   text-align: center;
-  --max-width: 650px;
+  touch-action: pan-y !important;
 
   .about {
     max-width: var(--max-width);

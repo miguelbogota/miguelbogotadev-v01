@@ -1,4 +1,5 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AppContent } from '@app-core/models/content.model';
 import { ContentService } from '@app-core/services/content/content.service';
 import { Subscription } from 'rxjs';
@@ -12,6 +13,7 @@ export class ContactComponent implements OnInit, OnDestroy {
 
   constructor(
     public contentService: ContentService,
+    private router: Router,
   ) { }
 
   private contentSubscription: Subscription | null = null;
@@ -33,6 +35,14 @@ export class ContactComponent implements OnInit, OnDestroy {
     navigator.clipboard.writeText('miguelbogota.dev@outlook.com')
       // .then(() => console.log('Email copied to the clipboard')) // Change console.log for a notification
       .catch((err) => console.error('Could not copy text: ', err));
+  }
+
+  /**
+   * Bind swipe right to the navigation.
+   */
+  @HostListener('swiperight')
+  public moveToTheLeft() {
+    this.router.navigate(['/']);
   }
 
 }

@@ -1,7 +1,8 @@
 :host {
+  --max-width: 400px;
   display: block;
   text-align: center;
-  --max-width: 400px;
+  touch-action: pan-y !important;
 
   .send-email {
     max-width: var(--max-width);
