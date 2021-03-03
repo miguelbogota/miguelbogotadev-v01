@@ -1,7 +1,7 @@
 {
-  "name": "miguelbogotadev",
-  "short_name": "miguelbogotadev",
-  "theme_color": "#1976d2",
+  "name": "Miguel Bogota",
+  "short_name": "Miguel Bogota",
+  "theme_color": "#fafafa",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "./",
