@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { ProjectsComponent } from './projects.component';
 // Imported Components
 import { ProjectTileModule } from '@app-components/project-tile/project-tile.module';
+import { SpinnersModule } from '@app-components/spinners/spinners.module';
 
 @NgModule({
   declarations: [ProjectsComponent],
@@ -12,6 +13,7 @@ import { ProjectTileModule } from '@app-components/project-tile/project-tile.mod
     CommonModule,
     RouterModule,
     ProjectTileModule,
+    SpinnersModule,
   ],
   exports: [ProjectsComponent],
 })

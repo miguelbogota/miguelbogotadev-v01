@@ -1,7 +1,13 @@
 <!-- Grid with the projects -->
-<div class="grid">
-  <app-project-tile *ngFor="let project of jobs" [project]="project"></app-project-tile>
+<div class="grid" *ngIf="jobs.length > 0; else loading">
+  <app-project-tile *ngFor="let project of jobs" [project]="project" [@experienceAnimation]></app-project-tile>
 </div>
+
+<ng-template #loading>
+  <div class="loading-container">
+    <app-cube-grid-spinner class="loading"></app-cube-grid-spinner>
+  </div>
+</ng-template>
 
 <!-- Button to load more projects -->
 <button class="load-more-button button" (click)="jobService.loadMoreJobs(3)">

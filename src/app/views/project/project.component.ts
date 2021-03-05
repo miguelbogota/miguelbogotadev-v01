@@ -1,6 +1,5 @@
 import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Location } from '@angular/common';
 import { AppJobDetails } from '@app-core/models/job-details.model';
 import { JobService } from '@app-core/services/job/job.service';
 import { NavigationService } from '@app-core/services/navigation/navigation.service';
@@ -16,7 +15,6 @@ export class ProjectComponent implements OnInit, OnDestroy {
   constructor(
     private activetedRoute: ActivatedRoute,
     private router: Router,
-    private location: Location,
     private navigation: NavigationService,
     public jobService: JobService,
   ) { }

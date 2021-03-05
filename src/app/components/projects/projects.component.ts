@@ -1,3 +1,4 @@
+import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AppJobDetails } from '@app-core/models/job-details.model';
 import { JobService } from '@app-core/services/job/job.service';
@@ -7,6 +8,22 @@ import { Subscription } from 'rxjs';
   selector: 'app-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss'],
+  animations: [
+    trigger('experienceAnimation', [
+      transition(
+        ':enter', [
+          style({ opacity: 0, transform: 'translateY(2px)' }),
+          animate('300ms 200ms linear', style({ opacity: 1, transform: 'translateY(0px)' })),
+        ],
+      ),
+      transition(
+        ':leave', [
+          style({ opacity: 1, transform: 'translateY(0px)' }),
+          animate('300ms linear', style({ opacity: 0, transform: 'translateY(2px)' })),
+        ],
+      ),
+    ]),
+  ],
 })
 export class ProjectsComponent implements OnInit, OnDestroy {
 

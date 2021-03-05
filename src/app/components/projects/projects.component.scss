@@ -9,7 +9,20 @@
   @media (max-width: 790px) {
     width: calc(100% + 22px);
     margin: 0px -11px var(--space-small);
-    --gap-size: 2px
+    --gap-size: 2px;
+  }
+
+  .loading-container {
+    display: flex;
+    width: 100%;
+    height: 450px;
+    justify-content: center;
+    align-items: center;
+
+    .loading {
+      width: 60px;
+      height: 60px;
+    }
   }
 
   .grid {
