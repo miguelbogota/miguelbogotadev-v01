@@ -23,7 +23,7 @@
         <!-- Year the project was worked on -->
         <div class="project-body-meta-item">
           <h3 class="project-body-meta-item-title">YEAR:</h3>
-          <p class="project-body-meta-item-text">{{ project?.year }}</p>
+          <p class="project-body-meta-item-text">{{ project?.startedAt?.toDate() | date:'yyyy' }}</p>
         </div>
         <!-- Role given during the project -->
         <div class="project-body-meta-item">

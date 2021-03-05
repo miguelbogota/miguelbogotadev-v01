@@ -37,8 +37,8 @@ export class JobService {
           : this.afs.collection<AppJobDetails>(this.collectionName, ref =>
             // If lastVisible it's undefined it means it's the first time it triggers the function
             this.lastVisible !== undefined
-              ? ref.orderBy('createdAt', 'desc').limit(size).startAfter(this.lastVisible)
-              : ref.orderBy('createdAt', 'desc').limit(size),
+              ? ref.orderBy('startedAt', 'desc').limit(size).startAfter(this.lastVisible)
+              : ref.orderBy('startedAt', 'desc').limit(size),
           )
             .get()
             .toPromise()
