@@ -7,10 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ImageSliderComponent implements OnInit {
 
-  constructor() {
-    // TODO: Change this for a more dynamic option
-    setInterval(() => this.nextImage(), 10000);
-  }
+  constructor() {}
 
   @Input() public imageUrls: string[] = [];
 
