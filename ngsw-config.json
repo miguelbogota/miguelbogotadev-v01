@@ -31,7 +31,8 @@
     "name": "api-freshness",
     "urls": [
       "https://firebasestorage.googleapis.com/v0/b/miguelbogotadev.appspot.com/",
-      "https://miguelbogotadev-api.vercel.app/"
+      "https://miguelbogotadev-api.vercel.app/",
+      "https://images.unsplash.com/"
     ],
     "cacheConfig": {
       "maxSize": 100,
