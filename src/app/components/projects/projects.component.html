@@ -8,8 +8,3 @@
     <app-cube-grid-spinner class="loading"></app-cube-grid-spinner>
   </div>
 </ng-template>
-
-<!-- Button to load more projects -->
-<button class="load-more-button button" (click)="jobService.loadMoreJobs(3)">
-  {{ jobService.canLoadMore ? 'LOAD MORE' : 'NOTHING ELSE TO LOAD :C' }}
-</button>

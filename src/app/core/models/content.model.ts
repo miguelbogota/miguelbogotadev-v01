@@ -4,10 +4,10 @@
 export interface AppContent {
   name: string;
   headline: string;
-  about: string[];
+  about: string;
   pageDescriptions: {
-    works: string[];
-    contact: string[];
+    works: string;
+    contact: string;
   };
   projectCount: number;
   imageUrls: {

@@ -5,6 +5,7 @@
   text-align: center;
   overflow: hidden;
   width: 100%;
+  margin: 0px 0px var(--space-small);
 
   @media (max-width: 790px) {
     width: calc(100% + 22px);
@@ -33,21 +34,5 @@
     gap: var(--gap-size);
     grid-template-columns: 50% 50%;
     grid-template-rows: auto;
-  }
-
-  .load-more-button {
-    --text-color: #8b8b8b;
-    --background-color: #a3a3a31f;
-    --hover-color: #a3a3a35b;
-    --active-color: #a3a3a37e;
-    --font-size: var(--size-button);
-    width: 100%;
-    margin: 0px 0px var(--space-small);
-    transition: width 0.3s linear, margin 0.3s linear;
-
-    @media (max-width: 790px) {
-      width: calc(100% - (var(--space-small) * 2));
-      margin: 0px var(--space-small) var(--space-small);
-    }
   }
 }

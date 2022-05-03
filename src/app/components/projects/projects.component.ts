@@ -1,5 +1,5 @@
 import { animate, style, transition, trigger } from '@angular/animations';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { AppJobDetails } from '@app-core/models/job-details.model';
 import { JobService } from '@app-core/services/job/job.service';
 import { Subscription } from 'rxjs';
@@ -30,6 +30,9 @@ export class ProjectsComponent implements OnInit, OnDestroy {
   constructor(
     public jobService: JobService,
   ) { }
+
+  @Input()
+  public jobCount = 0;
 
   private jobsSubscription: Subscription | null = null;
 

@@ -30,7 +30,8 @@
   "dataGroups": [{
     "name": "api-freshness",
     "urls": [
-      "https://firebasestorage.googleapis.com/v0/b/miguelbogotadev.appspot.com/"
+      "https://firebasestorage.googleapis.com/v0/b/miguelbogotadev.appspot.com/",
+      "https://miguelbogotadev-api.vercel.app/"
     ],
     "cacheConfig": {
       "maxSize": 100,
