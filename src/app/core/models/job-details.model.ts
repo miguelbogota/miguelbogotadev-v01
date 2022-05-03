@@ -6,7 +6,7 @@ import firebase from 'firebase/app';
 export interface AppJobDetails {
   id: string;
   name: string;
-  isCurrent: boolean;
+  isActive: boolean;
   description: string;
   role: string;
   imageUrls: string[];

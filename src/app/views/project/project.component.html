@@ -7,8 +7,8 @@
 
     <!-- Name of the project and it shows if is current active -->
     <div class="project-name">
-      <h1 class="project-name-text">{{ project?.name | uppercase}}</h1>
-      <h3 class="project-name-is-current" *ngIf="project?.isCurrent">CURRENTLY WORKING HERE</h3>
+      <h1 class="project-name-text">{{ project?.name | uppercase }}</h1>
+      <h3 class="project-name-is-current" *ngIf="project?.isActive">CURRENTLY WORKING HERE</h3>
     </div>
 
     <div class="project-body">
@@ -28,7 +28,7 @@
         <!-- Role given during the project -->
         <div class="project-body-meta-item">
           <h3 class="project-body-meta-item-title">ROLE:</h3>
-          <p class="project-body-meta-item-text">{{ project?.role | titlecase }}</p>
+          <p class="project-body-meta-item-text">{{ project?.role }}</p>
         </div>
       </div>
     </div>

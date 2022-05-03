@@ -11,9 +11,6 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class JobService {
 
   private jobDetailsSubject = new BehaviorSubject<AppJobDetails[]>([]);
-  // Property allows to re-call a query and get more jobs
-  private size = new BehaviorSubject(3);
-  private projectCount: number | null = null;
 
   constructor(
     private http: HttpClient,
@@ -21,12 +18,11 @@ export class JobService {
   ) {
     this.http.get<{ length: number; experience: AppJobDetails[] }>(`${environment.apiUrl}/api/experience`)
       .toPromise()
-      .then(({ length, experience }) => {
-        this.projectCount = length;
+      .then(({ experience }) => {
         this.jobDetailsSubject.next(
           experience.map(_experience => ({
             ..._experience,
-            imageUrls: _experience.imageUrls.map(img => environment.apiUrl + img),
+            imageUrls: _experience.imageUrls.map(img => img.includes('https://') ? img : environment.apiUrl + img),
           })),
         );
       });
@@ -53,7 +49,12 @@ export class JobService {
       .catch(() => {
         this.router.navigate(['/works']);
       });
-    if (!!project) { return { ...project, imageUrls: project.imageUrls.map(img => environment.apiUrl + img) }; }
+    if (!!project) {
+      return {
+        ...project,
+        imageUrls: project.imageUrls.map(img => img.includes('https://') ? img : environment.apiUrl + img),
+      };
+    }
 
     return null;
   }
