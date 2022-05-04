@@ -16,13 +16,13 @@ export class JobService {
     private http: HttpClient,
     private router: Router,
   ) {
-    this.http.get<{ length: number; experience: AppJobDetails[] }>(`${environment.apiUrl}/api/experience`)
+    this.http.get<{ length: number; work: AppJobDetails[] }>(`${environment.apiUrl}/api/work`)
       .toPromise()
-      .then(({ experience }) => {
+      .then(({ work }) => {
         this.jobDetailsSubject.next(
-          experience.map(_experience => ({
-            ..._experience,
-            imageUrls: _experience.imageUrls.map(img => img.includes('https://') ? img : environment.apiUrl + img),
+          work.map(_work => ({
+            ..._work,
+            imageUrls: _work.imageUrls.map(img => img.includes('https://') ? img : environment.apiUrl + img),
           })),
         );
       });
@@ -44,7 +44,7 @@ export class JobService {
     const projectInState = this.jobDetailsSubject.value.find(_project => _project.id === jobId);
     if (projectInState) { return projectInState; }
 
-    const project = await this.http.get<AppJobDetails>(`${environment.apiUrl}/api/experience/${jobId}`)
+    const project = await this.http.get<AppJobDetails>(`${environment.apiUrl}/api/work/${jobId}`)
       .toPromise()
       .catch(() => {
         this.router.navigate(['/works']);
