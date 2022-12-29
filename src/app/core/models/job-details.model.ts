@@ -4,7 +4,7 @@ import firebase from 'firebase/app';
  * Job details of the experience the user have to store in Firestore.
  */
 export interface AppJobDetails {
-  id: string;
+  id?: string;
   name: string;
   isActive: boolean;
   description: string;
@@ -12,5 +12,5 @@ export interface AppJobDetails {
   imageUrls: string[];
   gitUrl?: string;
   webUrl?: string;
-  startedAt: string;
+  startedAt: firebase.firestore.Timestamp;
 }

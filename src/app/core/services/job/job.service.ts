@@ -1,31 +1,35 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
+import { AngularFirestore, DocumentReference } from '@angular/fire/firestore';
 import { AppJobDetails } from '@app-core/models/job-details.model';
-import { environment } from '@app-env';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
 })
 export class JobService {
 
+  private collectionName = 'experience';
   private jobDetailsSubject = new BehaviorSubject<AppJobDetails[]>([]);
+  private collectionRef;
+  private jobsObservable: Observable<AppJobDetails[]>;
 
   constructor(
-    private http: HttpClient,
-    private router: Router,
+    private afs: AngularFirestore,
   ) {
-    this.http.get<{ length: number; work: AppJobDetails[] }>(`${environment.apiUrl}/api/work`)
-      .toPromise()
-      .then(({ work }) => {
-        this.jobDetailsSubject.next(
-          work.map(_work => ({
-            ..._work,
-            imageUrls: _work.imageUrls.map(img => img.includes('https://') ? img : environment.apiUrl + img),
-          })),
-        );
-      });
+    this.collectionRef = this.afs.collection<AppJobDetails>(this.collectionName);
+    this.jobsObservable = this.collectionRef
+      .snapshotChanges()
+      .pipe(
+        map(action =>
+          action.map(a => ({
+            id: a.payload.doc.id,
+            ...a.payload.doc.data(),
+          }) as AppJobDetails),
+        ),
+      )
+
+    this.jobsObservable.subscribe(jobs => this.jobDetailsSubject.next(jobs));
   }
 
   /**
@@ -34,28 +38,46 @@ export class JobService {
   public getJobs(): Observable<AppJobDetails[]> {
     return this.jobDetailsSubject;
   }
-
   /**
    * Returns an individual document from the db.
    *
    * @param jobId Document id to get.
    */
   public async getJob(jobId: string): Promise<AppJobDetails | null> {
-    const projectInState = this.jobDetailsSubject.value.find(_project => _project.id === jobId);
+    const projectInState = this.jobDetailsSubject.value.find(project => project.id === jobId);
     if (projectInState) { return projectInState; }
 
-    const project = await this.http.get<AppJobDetails>(`${environment.apiUrl}/api/work/${jobId}`)
-      .toPromise()
-      .catch(() => {
-        this.router.navigate(['/works']);
-      });
-    if (!!project) {
-      return {
-        ...project,
-        imageUrls: project.imageUrls.map(img => img.includes('https://') ? img : environment.apiUrl + img),
-      };
-    }
-
-    return null;
+    const data = await this.collectionRef.doc(jobId).get().toPromise();
+    return data ? ({ id: data.id, ...(data.data() as AppJobDetails) }) : null;
   }
+
+  /**
+   * Updates an individual document in the db by passing the new job.
+   *
+   * @param jobId Document id to edit.
+   * @param newJob New job to change to.
+   */
+  public setJob(jobId: string, newJob: AppJobDetails): void {
+    delete newJob.id;
+    this.collectionRef.doc(jobId).set(newJob, { merge: true });
+  }
+
+  /**
+   * Add an individual document in the db by passing the new job.
+   *
+   * @param newJob New job to add.
+   */
+  public addJob(newJob: AppJobDetails): Promise<DocumentReference<AppJobDetails>> {
+    return this.collectionRef.add(newJob);
+  }
+
+  /**
+   * Deletes an individual document in the db by passing the job id.
+   *
+   * @param jobId Document id to delete.
+   */
+  public async deleteJob(jobId: string): Promise<void> {
+    return this.collectionRef.doc(jobId).delete();
+  }
+
 }

@@ -9,6 +9,7 @@
     "e2e": "ng e2e",
     "watch": "ng serve -o",
     "host": "firebase deploy",
+    "login": "firebase login",
     "deploy": "npm run build && npm run host"
   },
   "private": true,

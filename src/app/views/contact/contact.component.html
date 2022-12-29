@@ -6,7 +6,7 @@
 
   <!-- Page description -->
   <div class="description">
-    <p class="description-text" *ngFor="let paragraph of (contentService.getContent() | async)?.pageDescriptions?.contact?.split('\n')">
+    <p class="description-text" *ngFor="let paragraph of (contentService.getContent() | async)?.pageDescriptions?.contact?.split('\\n')">
       {{ paragraph }}
     </p>
   </div>

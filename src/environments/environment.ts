@@ -7,7 +7,6 @@ import { firebaseConfig } from './environment.keys';
 export const environment = {
   production: false,
   firebase: firebaseConfig,
-  apiUrl: 'https://miguelbogotadev-api.vercel.app',
 };
 
 /*

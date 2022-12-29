@@ -9,7 +9,6 @@ export interface AppContent {
     works: string;
     contact: string;
   };
-  projectCount: number;
   imageUrls: {
     url: string;
     label: string;
