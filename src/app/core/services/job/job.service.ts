@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, DocumentReference } from '@angular/fire/firestore';
+import { AppStorage } from '@app-core/classes/storage/storage.class';
 import { AppJobDetails } from '@app-core/models/job-details.model';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -11,25 +11,24 @@ export class JobService {
 
   private collectionName = 'experience';
   private jobDetailsSubject = new BehaviorSubject<AppJobDetails[]>([]);
+  private storage = new AppStorage<AppJobDetails[]>({ key: 'iZOPXlczPEyntiQaCgrs', type: 'local' });
   private collectionRef;
-  private jobsObservable: Observable<AppJobDetails[]>;
 
   constructor(
     private afs: AngularFirestore,
   ) {
     this.collectionRef = this.afs.collection<AppJobDetails>(this.collectionName);
-    this.jobsObservable = this.collectionRef
-      .snapshotChanges()
-      .pipe(
-        map(action =>
-          action.map(a => ({
-            id: a.payload.doc.id,
-            ...a.payload.doc.data(),
-          }) as AppJobDetails),
-        ),
-      )
-
-    this.jobsObservable.subscribe(jobs => this.jobDetailsSubject.next(jobs));
+    this.collectionRef
+      .get()
+      .toPromise()
+      .then(action => {
+        this.storage.set(action.docs.map(a => ({
+          id: a.id,
+          ...a.data(),
+        }) as AppJobDetails));
+      });
+    // Get values from local storage
+    this.storage.valueChanges.subscribe(jobs => this.jobDetailsSubject.next(jobs ?? []));
   }
 
   /**
