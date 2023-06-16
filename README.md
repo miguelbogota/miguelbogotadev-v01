@@ -27,4 +27,4 @@ Personal portfolio using Angular connected to firebase as a database. It works a
   </a>
 </p>
 
-See also the list of [contributors](https://github.com/miguelbogota/miguelbogotadev/graphs/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/miguelbogota/miguelbogotadev-v01/graphs/contributors) who participated in this project.
