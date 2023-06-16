@@ -2,7 +2,7 @@
 
 Personal portfolio using Angular connected to firebase as a database. It works as a PWA and it'll list all the different projects I've been in.
 
-## [Live Website](https://miguelbogotadev.web.app)
+## [Live Website](https://miguelbogotadev-v01.web.app)
 
 ## Author
 
