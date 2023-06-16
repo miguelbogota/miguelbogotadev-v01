@@ -1,14 +1,18 @@
 {
+  "projects": {
+    "miguelbogotadev": "miguelbogotadev"
+  },
   "targets": {
     "miguelbogotadev": {
       "hosting": {
         "miguelbogotadev": [
           "miguelbogotadev"
+        ],
+        "miguelbogotadev-v01": [
+          "miguelbogotadev-v01"
         ]
       }
     }
   },
-  "projects": {
-    "miguelbogotadev": "miguelbogotadev"
-  }
+  "etags": {}
 }

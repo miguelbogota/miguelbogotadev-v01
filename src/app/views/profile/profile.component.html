@@ -31,8 +31,8 @@
 <div class="recent-works">
   <!-- Recent works title -->
   <h3 class="recent-works-title">RECENT WORKS</h3>
-  <!-- Recent projects -->
-  <app-projects></app-projects>
+  <!-- Page archive notice -->
+  <app-archived-page-notice *ngIf="content" [content]="content"></app-archived-page-notice>
   <!-- Button to the works page -->
   <a class="recent-works-button button" [routerLink]="['/works']">
     VIEW ALL

@@ -1,45 +1,18 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
-import { AppStorage } from '@app-core/classes/storage/storage.class';
 import { AppContent } from '@app-core/models/content.model';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import contentJson from 'src/assets/content.json';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ContentService {
-
-  private collectionName = 'content';
-  private documentId = 'jBDR2G0ttYPIwc7wRGPU';
-  private storage = new AppStorage<AppContent>({ key: 'a1YALo9AEmKZX21lBDiS', type: 'local' });
-  private contentSubject = new BehaviorSubject<AppContent | null>(this.storage.value);
-  private documentRef;
-
-  constructor(
-    private afs: AngularFirestore,
-  ) {
-    this.documentRef = this.afs.collection(this.collectionName).doc<AppContent>(this.documentId);
-    this.documentRef.get().toPromise().then(
-      content => this.storage.set(content.data() !== undefined ? content.data() as AppContent : null),
-    );
-    // Get values from local storage
-    this.storage.valueChanges.subscribe(content => this.contentSubject.next(content));
-  }
+  constructor() { }
 
   /**
    * Returns an observable with the content to render.
    */
-  public getContent(): Observable<AppContent | null> {
-    return this.contentSubject;
+  public getContent(): Observable<AppContent> {
+    return of(contentJson);
   }
-
-  /**
-   * Updates in the db by passing the new object content.
-   *
-   * @param newContent New content to change to.
-   */
-  public setContent(newContent: AppContent): void {
-    this.documentRef.set(newContent, { merge: true });
-  }
-
 }

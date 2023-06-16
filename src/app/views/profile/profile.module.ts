@@ -7,7 +7,7 @@ import { ProfileComponent } from './profile.component';
 import { CoverModule } from '@app-components/cover/cover.module';
 import { HeadlineModule } from '@app-components/headline/headline.module';
 import { FooterModule } from '@app-components/footer/footer.module';
-import { ProjectsModule } from '@app-components/projects/projects.module';
+import { ArchivedPageNoticeModule } from '@app-components/archived-page-notice/archived-page-notice.module';
 
 @NgModule({
   declarations: [ProfileComponent],
@@ -17,7 +17,7 @@ import { ProjectsModule } from '@app-components/projects/projects.module';
     CoverModule,
     HeadlineModule,
     FooterModule,
-    ProjectsModule,
+    ArchivedPageNoticeModule,
   ],
 })
 export class ProfileModule { }

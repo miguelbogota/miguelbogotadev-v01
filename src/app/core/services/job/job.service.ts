@@ -4,6 +4,11 @@ import { AppStorage } from '@app-core/classes/storage/storage.class';
 import { AppJobDetails } from '@app-core/models/job-details.model';
 import { BehaviorSubject, Observable } from 'rxjs';
 
+/**
+ * @deprecated No longer used. The whole page is now static.
+ * There is no need to do anything since the components that used this service
+ * are no longer used.
+ */
 @Injectable({
   providedIn: 'root',
 })

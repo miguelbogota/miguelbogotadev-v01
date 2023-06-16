@@ -9,7 +9,8 @@
     </p>
   </div>
 
-  <app-projects></app-projects>
+  <!-- Page archive notice -->
+  <app-archived-page-notice *ngIf="(contentService.getContent() | async) as content" [content]="content"></app-archived-page-notice>
 </div>
 
 <app-footer></app-footer>

@@ -8,6 +8,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "watch": "ng serve -o",
+    "firebase:emulator": "firebase emulators:start --only firestore --import ./seed",
     "host": "firebase deploy",
     "login": "firebase login",
     "deploy": "npm run build && npm run host"
